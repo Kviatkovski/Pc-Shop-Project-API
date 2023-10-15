@@ -3,6 +3,7 @@ const dotenv = require('dotenv').config();
 
 const products = require('./routes/productRoutes');
 const users = require('./routes/userRoutes');
+const carts = require('./routes/cartRoutes');
 const errorHandler = require('./middleware/errorHandler');
 const connectDb = require('./config/dbConnection');
 
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 app.use('/api/products', products);
 app.use('/api/users', users);
+app.use('/api/carts', carts);
 app.use(errorHandler);
 
 const port = process.env.PORT || 5000;

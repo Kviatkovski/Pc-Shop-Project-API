@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Please confirm user password'],
     },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
